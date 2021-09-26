@@ -1,4 +1,4 @@
-import React from 'react';
+import CardPokemon from './components/CardPokemon';
 import './global.css';
 
 
@@ -6,8 +6,7 @@ import './global.css';
  function App() {
   return (
    <>
-   <h1>Eloiza Santos e Carlinhos 👏👏👏 </h1>
-   <img src="../images/Elo e Carlinhos.jpg" alt="Elo e Carlinhos" />
+    <CardPokemon />
    </>
   );
 }
