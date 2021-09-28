@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { pokeApi } from "../../services/api";
+import './styles.css';
 
 interface Pokemon{
   id: number; 
   name: string;
-  types: TypePokemon[];
   picture: string;
 }
 
@@ -16,20 +16,18 @@ export default function CardPokemon(){
   const [pokemon, setPokemon] = useState<Pokemon>({
     id:0,
     name: '',
-    types:[],
-    
     picture: '',
   });
 
   useEffect(()=>{
-    pokeApi.get(`/1`).then((p => {
+    pokeApi.get(`/25`).then((p => {
       setPokemon({
         id:p.data.id,
-        name: p.data.name,
-        types:p.data.types,
-        picture: '',
-        }  )  
-    }));
+        name: p.data.name,       
+        picture: p.data.sprites.other.dream_world.front_default,
+    })
+  }
+  ));
       
   },[]);
 
@@ -37,15 +35,22 @@ export default function CardPokemon(){
 
   return (
     <main>
-      <div>
-        <h3>{pokemon.name}</h3>
+      <div className="card">
+        <h3>{`${pokemon.name} #${pokemon.id}` }</h3>
 
-        <img src={pokemon.picture} alt={pokemon.name} />
-
-        {pokemon.types.forEach( p => {
-          <strong>{p.type.name}</strong> 
-        })}
-
+        <img src={pokemon.picture} alt={pokemon.name} />       
+        <div className="buttons">
+          <button>
+            <span className="material-icons">
+            arrow_back
+            </span>
+          </button>
+          <button>
+            <span className="material-icons">
+            arrow_forward
+            </span>
+          </button>
+        </div>
       </div>
     </main>
   );
