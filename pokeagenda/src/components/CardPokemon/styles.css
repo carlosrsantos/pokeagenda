@@ -10,16 +10,20 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 15% 0 0 0;
+  margin: 5% 0 0 0;
   padding: 15px;
   border-radius: 12px;
-  width: 30%;
-  height: 300px;
+  width: 50%;
+  height: 100%;
   flex: 1;
   background-color: var(--card-color);
-  box-shadow: -3px 5px 9px 0px rgba(50, 50, 50, 0.8);
+  box-shadow: -3px 5px 9px 0px rgba(50, 50, 50, 0.7);
 }
-
+.sprite{
+  width: 20%;
+  height: 65%;
+  margin: 5%;
+}
 .buttons {
   width: 100%;
   margin: 20px 0 0 0 ;
