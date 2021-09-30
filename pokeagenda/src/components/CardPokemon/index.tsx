@@ -6,11 +6,8 @@ interface Pokemon{
   id: number; 
   name: string;
   picture: string;
-  types: typePokemon[];
-}
-
-interface typePokemon{
-  type: {name: string;}
+  type_main: string;
+  type_secondary?: string;
 }
 
 export default function CardPokemon(){
@@ -18,7 +15,8 @@ export default function CardPokemon(){
     id:0,
     name: '',
     picture: '',
-    types: [],
+    type_main: '',
+    type_secondary:'',
   });
 
   useEffect(()=>{
@@ -27,7 +25,8 @@ export default function CardPokemon(){
         id:p.data.id,
         name: p.data.name,       
         picture: p.data.sprites.other.dream_world.front_default,
-        types: p.data.types,
+        type_main: p.data.types[0].type.name,
+      
     })
   }
   ));      
@@ -43,7 +42,8 @@ export default function CardPokemon(){
           id:p.data.id,
           name: p.data.name,       
           picture: p.data.sprites.other.dream_world.front_default,
-          types: p.data.types,
+          type_main: p.data.types[0].type.name,
+          
       })
     }
     ));      
@@ -66,7 +66,8 @@ export default function CardPokemon(){
           id:p.data.id,
           name: p.data.name,       
           picture: p.data.sprites.other.dream_world.front_default,
-          types: p.data.types,
+          type_main: p.data.types[0].type.name,
+          // type_secondary: p.data.types[1].type.name,
       })
     }
     ));      
@@ -82,9 +83,12 @@ export default function CardPokemon(){
         <h3>{`${pokemon.name} #${pokemon.id}` }</h3>
 
         <img className="sprite" src={pokemon.picture} alt={pokemon.name} /> 
-        {pokemon.types.forEach(p => {
-          <p>{p.type.name}</p>        
-        })}
+        
+          <span>{`type: ${pokemon.type_main}`}</span>    
+          {pokemon.type_secondary && 
+             <span>{`type: ${pokemon.type_secondary}`}</span>
+          }   
+        
         
         <div className="buttons">
           
