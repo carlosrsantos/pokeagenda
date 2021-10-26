@@ -6,8 +6,8 @@ interface Pokemon{
   id: number; 
   name: string;
   picture: string;
-  type_main: string;
-  type_secondary?: string;
+  types: { type: { name: string }}[];
+  
 }
 
 export default function CardPokemon(){
@@ -15,17 +15,17 @@ export default function CardPokemon(){
     id:0,
     name: '',
     picture: '',
-    type_main: '',
-    type_secondary:'',
+    types: [],
+  
   });
 
   useEffect(()=>{
-    pokeApi.get(`/25`).then((p => {
+    pokeApi.get(`/1`).then((p => {
       setPokemon({
         id:p.data.id,
         name: p.data.name,       
         picture: p.data.sprites.other.dream_world.front_default,
-        type_main: p.data.types[0].type.name,
+        types: p.data.types,
       
     })
   }
@@ -42,7 +42,7 @@ export default function CardPokemon(){
           id:p.data.id,
           name: p.data.name,       
           picture: p.data.sprites.other.dream_world.front_default,
-          type_main: p.data.types[0].type.name,
+          types: p.data.types,
           
       })
     }
@@ -58,7 +58,7 @@ export default function CardPokemon(){
   async function proximoPokemon () {
     let pokeId = pokemon.id;
 
-    // if(pokemon.id <= 151) {
+   if(pokemon.id < 151) {
       pokeId+=1;
 
       pokeApi.get(`/${pokeId}`).then((p => {
@@ -66,15 +66,13 @@ export default function CardPokemon(){
           id:p.data.id,
           name: p.data.name,       
           picture: p.data.sprites.other.dream_world.front_default,
-          type_main: p.data.types[0].type.name,
+          types: p.data.types,
           // type_secondary: p.data.types[1].type.name,
       })
     }
-    ));      
-
-    // }
-
-  }
+    )); 
+ }
+}
   
 
   return (
@@ -83,11 +81,10 @@ export default function CardPokemon(){
         <h3>{`${pokemon.name} #${pokemon.id}` }</h3>
 
         <img className="sprite" src={pokemon.picture} alt={pokemon.name} /> 
-        
-          <span>{`type: ${pokemon.type_main}`}</span>    
-          {pokemon.type_secondary && 
-             <span>{`type: ${pokemon.type_secondary}`}</span>
-          }   
+         Types:
+         {pokemon.types.length > 1 ? <p>{pokemon.types[0].type.name} & {pokemon.types[1].type.name}</p>
+           : <p>{pokemon.types[0].type.name}</p>
+         }
         
         
         <div className="buttons">
@@ -106,5 +103,4 @@ export default function CardPokemon(){
       </div>
     </main>
   );
-
 }

@@ -6,16 +6,15 @@ main {
 }
 
 .card {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5% 0 0 0;
-  padding: 15px;
+  margin-top: 50px;
+  padding: 10px;
   border-radius: 12px;
-  width: 50%;
-  height: 100%;
-  flex: 1;
+  width: 800px;
+  height: 500px;  
   background-color: var(--card-color);
   box-shadow: -3px 5px 9px 0px rgba(50, 50, 50, 0.7);
 }
@@ -23,6 +22,9 @@ main {
   width: 20%;
   height: 65%;
   margin: 5%;
+}
+.type{
+  font-size: 1.8rem;
 }
 .buttons {
   width: 100%;
