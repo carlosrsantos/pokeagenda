@@ -81,10 +81,10 @@ export default function CardPokemon(){
         <h3>{`${pokemon.name} #${pokemon.id}` }</h3>
 
         <img className="sprite" src={pokemon.picture} alt={pokemon.name} /> 
-         Types:
+         {/* Types:
          {pokemon.types.length > 1 ? <p>{pokemon.types[0].type.name} & {pokemon.types[1].type.name}</p>
            : <p>{pokemon.types[0].type.name}</p>
-         }
+         } */}
         
         
         <div className="buttons">
