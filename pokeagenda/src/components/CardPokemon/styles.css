@@ -10,14 +10,36 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 10px;
   border-radius: 12px;
   width: 800px;
-  height: 500px;  
+  height: 650px;  
   background-color: var(--card-color);
   box-shadow: -3px 5px 9px 0px rgba(50, 50, 50, 0.7);
 }
+@media( max-width: 600) {
+  
+  .card{
+    display:none;
+  }
+
+  .sprite {
+    width:10%;
+    height: 35%;
+    margin: 5%;
+  }
+
+  .buttons {
+    width: 20%;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+  
+  }
+}
+
 .sprite{
   width: 20%;
   height: 65%;
@@ -50,4 +72,13 @@ h3 {
   font-size: 3rem;
   text-align: center;
   margin: 20px;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+ul {
+  font-size:1.75rem;
+  list-style-type: none;
 }
