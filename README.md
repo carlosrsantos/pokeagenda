@@ -1,18 +1,19 @@
-## Pokeagenda
+# Pokeagenda
 
-Techs usadas:
+##Techs usadas:
+
 <div>
-<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </div>
 </br></br>
 
 
-Em prod:
+### Obs.: Esse projeto foi refatorado em Vue 3 -> <a href="https://github.com/carlosrsantos/poke-agenda">github.com/carlosrsantos/pokeagenda</a>
 
 <div>
-<a href="https://pokeagenda.netlify.app/">Pokeagenda</a>
+Acesse: <a href="https://pokeagenda.netlify.app/">Pokeagenda</a>
 </div>
 </br></br>
 
