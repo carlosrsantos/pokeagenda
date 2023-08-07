@@ -10,7 +10,7 @@
 </br></br>
 
 
-### Obs.: Esse projeto foi refatorado em Vue 3 -> <a href="https://github.com/carlosrsantos/poke-agenda">github.com/carlosrsantos/pokeagenda</a>
+### Obs.: Esse projeto foi refatorado em Vue 3 -> <a href="https://github.com/carlosrsantos/poke-agenda">github.com/carlosrsantos/poke-agenda</a>
 
 <div>
 Acesse: <a href="https://pokeagenda.netlify.app/">Pokeagenda</a>
